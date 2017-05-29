@@ -33,10 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        // });
 
         //
-        dialog.setSingleChoiceItems(ItemArr, 0, new DialogInterface.OnClickListener() {
+        /*dialog.setSingleChoiceItems(ItemArr, 0, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 butDialog.setText(ItemArr[i]);
+            }
+        });*/
+        //체크박스 목록
+        //선택 여부 배열
+        boolean[] checkedItems = {true,false,true,false};
+        dialog.setMultiChoiceItems(ItemArr, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i, boolean b) {
+                if(b)
+                    butDialog.setText(ItemArr[i]);
             }
         });
         dialog.show();
