@@ -24,14 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("First Dialog");
         dialog.setIcon(R.drawable.candy);
-      //  dialog.setMessage("There is writing room");
-        dialog.setItems(ItemArr, new DialogInterface.OnClickListener() {
+      ///*dialog.setMessage("There is writing room");
+        //dialog.setItems(ItemArr, new DialogInterface.OnClickListener() {
+            //@Override
+            //public void onClick(DialogInterface dialogInterface, int i) {
+           //     butDialog.setText(ItemArr[i]);
+         //   }
+       // });
+
+        //
+        dialog.setSingleChoiceItems(ItemArr, 0, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 butDialog.setText(ItemArr[i]);
             }
         });
-        dialog.setPositiveButton("OK",null);
         dialog.show();
     }
 }
